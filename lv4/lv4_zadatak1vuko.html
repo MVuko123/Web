@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Validacija</h1>
+    <div id="prvi">
+        <form>
+            <button type="button" onclick="pozdrav()">Pozdrav!</button>  <br>
+           
+            <label for="text">Ime i prezime: </label>
+            <input type="text" id = "ime" placeholder="Unesite vaše ime i prezime"> <br>
+          
+            
+            <label for="textarea">Polje za ispis: </label>                            
+            <textarea id="vuko" cols="50" rows="10" placeholder="Mjesto za ispis kolegija" disabled></textarea>  <br>
+            
+           
+            <label for="text">Umetnite broj:</label>
+            <input type="number" id="broj">  
+            <i class="fa fa-question-circle" title="Broj mora biti između 1 i 10">?</i>
+            <button type="button" onclick="kvadriraj()" >Kvadriraj</button>   <br>
+            
+            
+            <button type="button" onmouseup="kolegiji()">Kolegiji</button>
+            <button  type="button" onmouseover="obriši()">Obriši</button>
+
+            <p id="kvadrat">Ovdje će se ispisati rezultat</p>  <br>
+            <label for="email">Vaša e-mail adresa:</label>
+            <input type="email" id="email"><br> <br>
+            <button onclick="validacija()"> Provjeri! </button> <br>
+
+        </form>
+    </div>
+
+
+
+
+
+
+
+
+
+        <script>
+           function pozdrav(){
+                for(let i = 1; i < 6; i++){
+                    alert("Ovo vam je " + i +". upozorenje");
+                }
+            }
+
+            function validacija(){
+                counter = 0;
+                let ime = document.getElementById("ime").value;
+                if(ime.length == 0){
+                    counter +=1;
+                    alert("Polje za ime ne smije biti prazno!")
+                }
+                else if(ime.length < 5){
+                    counter +=1;
+                    alert("Ime ne može biti manje od 5 slova")
+                }
+
+                let vuko = document.getElementById("vuko").value;
+                if(vuko.length < 30){
+                    counter +=1;
+                    alert("U polju mora biti više od 30 znakova!")
+                }
+
+                let broj = document.getElementById("broj").value;
+                 if (broj < 1 || broj > 10) {
+                    counter +=1;
+                    alert("Uneseni broj nije u zadanome rasponu, pokušajte ponovno.")
+                }
+                
+                if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.getElementById("email").value))) {
+                    alert("Unijeli ste ne vazacu email adresu!");
+                    counter +=1;
+                }
+                
+                if(counter == 0){
+                    
+                    let email = document.getElementById("email").value;
+                    var array =  document.getElementById("ime").value.split(" ");
+                    let ime = array[0];
+                    let prezime = array[1];
+                    confirm("Vaše ime je " + ime +" vaše prezime je " + prezime +", a email adresa je: " + email);                    
+                }
+
+                 
+            }
+
+            function kvadriraj(){
+                let broj = document.getElementById("broj").value;
+                if(broj < 1 || broj > 10){
+                    document.getElementById("kvadrat").innerHTML = "Broj koji ste unjeli nije u rasponu"
+                }
+                else{
+                broj = Math.pow(broj, 2);
+                document.getElementById("kvadrat").innerHTML = broj;
+                }
+            }
+
+            function kolegiji(){
+                const vuko = document.getElementById("vuko");
+                if(vuko.innerHTML == ""){
+                    const kolegiji = ["Web", "Digitalne", "Programsko", "Android", "Ekonomika", "Praksa", "Dizajn", "Signali"];
+                    let counter = 0;
+                    for(var broj_kolegija in kolegiji)
+                    {
+                        counter += 1;
+                        document.getElementById('vuko').innerHTML+=("Kolegij broj [" + counter);
+                        document.getElementById('vuko').innerHTML+=("]: "+ kolegiji[broj_kolegija] + "\n")
+                    }
+
+                }
+            }
+
+            function obriši() {
+            document.getElementById("vuko").innerHTML = "";
+            }
+
+           
+            
+        </script>
+
+</body>
+</html>

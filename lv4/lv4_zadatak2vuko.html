@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <title>JavaScript</title>
+</head>
+
+<body>
+    <h1>Jednostavna tvorba objekta</h1>
+    <script type="text/javascript">
+
+        function pas(ime, pasmina, starost) {
+            this.ime = ime;
+            this.pasmina = pasmina;
+            this.starost = starost;
+        }
+        var bijeli = new pas("jura", "dalmatiner", "8");
+        var garavi = new pas("garo", "mješanac", "nepoznato")
+        var smeđi = new pas("rex", "njemački ovčar", "3")
+        var bijeli = new pas("lupo", "samojed", "6")
+
+        document.write(
+            "Ime prvog psa je: " + bijeli.ime
+            + ", pasmina: " + bijeli.pasmina
+            + " i starost: " + bijeli.starost + "<br>")
+        document.write(
+            "Ime drugog psa je: " + garavi.ime
+            + ", pasmina: " + garavi.pasmina
+            + " i starost: " + garavi.starost + "<br>")
+        document.write(
+            "Ime treceg psa je: " + smeđi.ime
+            + ", pasmina: " + smeđi.pasmina
+            + " i starost: " + smeđi.starost + "<br>")
+        document.write(
+            "Ime četvrtoga psa je: " + bijeli.ime
+            + ", pasmina: " + bijeli.pasmina
+            + " i starost: " + bijeli.starost + "<br>")
+
+        function mačka(ime, boja, dob, spol) {
+            this.ime = ime;
+            this.boja = boja;
+            this.dob = dob;
+            this.spol = spol;
+        }
+        var tigar = new mačka("Teo", "smeđo-žuta", "13", "Muško")
+        var micika = new mačka("Micila", "crna", "4", "Žensko")
+        micika.starost = "nepoznato"
+
+        document.write(
+                "Ime prve mačke je " + tigar.ime
+                + ", pasmina: " + tigar.boja
+                + ", starost: " + tigar.starost
+                + " i spol: " + tigar.spol + "<br>"
+        )
+
+         document.write(
+                "Ime druge mačke je " + micika.ime
+                + ", pasmina: " + micika.boja
+                + ", starost: " + micika.starost
+                + " i spol: " + micika.spol  + "<br> <br> <br>"
+        )
+    </script>
+
+    <script src=lv4.js>
+
+    </script>
+</body>
+
+</html>
