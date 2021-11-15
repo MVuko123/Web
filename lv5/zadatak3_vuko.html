@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <link rel="stylesheet" href="css2.css">
+</head>
+<body>
+    <img src="d.jpg" id="prva">
+    <img src="e.jpg" id="druga">
+
+    <div id="prvi" class="ui-widget-header">
+        <p>Crna</p>
+    </div>
+    <div id="drugi" class="ui-widget-header">
+        <p>Crvena</p>
+    </div>
+
+    <script>
+    $("img").draggable({ revert: "invalid" });
+    $( "#prvi" ).droppable(
+        {
+        accept: "#prva",   
+        drop: function(event,ui){
+            $(this)
+            .addClass("pozadina")
+            .find("p")
+                .html("OK");
+
+        }
+    }
+    );
+    $( "#drugi" ).droppable(
+        {
+        accept: "#druga",
+        drop:function(event,ui){
+            $("#drugi")
+            .addClass("pozadina")
+            .find("p")
+                .html("OK");
+        }
+    }
+    );
+    </script>
+</body>
+</html>

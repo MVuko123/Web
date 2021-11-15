@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Drugi zadatak</h1>
+    <div class="container-fluid">
+        <div class="row">
+            <div id="prva" class="col-6">
+                <p>U listi su navedena tri najbolje ocjenjenja filma</p>
+                <ul >
+                    <li>
+                        <a href="https://www.imdb.com/title/tt0111161/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=e31d89dd-322d-4646-8962-327b42fe94b1&pf_rd_r=M01CEQXNVXH0KR9SYNE7&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=top&ref_=chttp_tt_1" target="blank"> <p>Iskupljenje u Shawshanku (1994)</p> </a>
+                    </li>
+                    <li>
+                    <a href="https://www.imdb.com/title/tt0068646/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=e31d89dd-322d-4646-8962-327b42fe94b1&pf_rd_r=M01CEQXNVXH0KR9SYNE7&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=top&ref_=chttp_tt_2" target="blank"> <p>Kum (1972)</p> </a> 
+                </li>
+                <li>
+                    <a href="https://www.imdb.com/title/tt0071562/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=e31d89dd-322d-4646-8962-327b42fe94b1&pf_rd_r=M01CEQXNVXH0KR9SYNE7&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=top&ref_=chttp_tt_3" target="blank"><p>Kum 2 (1974)</p></a>
+                </li>
+                </ul>
+            </div>
+            <div class="col-6">
+                <p>Most iconic songs of all time</p>
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=hTWKbfoikeg" target="blank"><p>Smells Like Teen Spirit - Nirvana</p></a></li>
+                    <li><a href="https://www.youtube.com/watch?v=YkgkThdzX-8" target="blank"><p>Imagine - John Lennon</p></a></li>
+                    <li><a href="https://www.youtube.com/watch?v=ftjEcrrf7r0" target="blank"><p>One - U2</p></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row" >
+            <div class="col-4">
+                <img src="a.jpg" id="slika1" class="slika1">
+            </div>
+             <div class="col-4">
+                <img src="b.jpg" id="slika2"   class="slika2">
+            </div>
+             <div class="col-4">
+                <img src="c.jpg" id="slika3"  class="slika3">
+            </div>          
+        </div>
+        <button>Abrakadabra</button>
+    </div>
+<script>
+    $("button").click( 
+    function(){
+        $("#prva ul:first-of-type, #prva ul:first-of-type a").addClass("zelena");
+    }
+    );
+
+    $("img").click(
+        function(){
+            $(this).hide();
+        }
+    );
+
+    $("img").mouseover(
+            function(){
+                $(this).addClass("obrub");
+            }
+    );
+
+    $("button").click(
+        function(){
+            $("#slika1").fadeToggle("fast");
+            $("#slika2").fadeToggle("slow");
+            $("#slika3").fadeToggle(5000);
+        }
+    );
+</script>
+
+</body>
+</html>

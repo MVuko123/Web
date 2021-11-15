@@ -1,0 +1,14 @@
+img {
+    height: 100px;
+    width: 100px;
+}
+
+div {
+    height: 200px;
+    width: 200px;
+    background-color: yellow;
+}
+
+.pozadina {
+    background-color: aqua;
+}

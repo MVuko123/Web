@@ -1,0 +1,16 @@
+img{
+   width: 500px;
+   height: 250px;
+}
+
+.zelena {
+    color: green;
+}
+
+.obrub{
+    border: black 5px solid;
+}
+
+.pozadina {
+    background-color: aqua;
+}
